@@ -13,6 +13,25 @@ def enQueue(data):
         return
     rear += 1
     queue[rear] = data
+
+def isQueueEmpty():
+    global SIZE,queue,front,rear
+    if (front == rear):
+        return True
+    else:
+        return False
+
+def deQueue():
+    global SIZE,queue,front,rear
+    if (isQueueEmpty()):
+        print('큐 텅비었음')
+        return
+    front += 1
+    data = queue[front]
+    queue[front] = None
+    return data
+    
+    
     
 
 
@@ -31,3 +50,15 @@ print('출구<---',queue,'<---입구')
 
 #nQueue('재남')
 #print('출구<---',queue,'<---입구')
+
+
+retData = deQueue()
+print('손님 이리로 :', retData)
+
+retData = deQueue()
+print('손님 이리로 :', retData)
+
+print('출구<--', queue, '<--입구')
+
+retData = deQueue()
+print('손님 이리로 :', retData)
