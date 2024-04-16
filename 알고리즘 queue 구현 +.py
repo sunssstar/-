@@ -30,7 +30,13 @@ def deQueue():
     data = queue[front]
     queue[front] = None
     return data
-    
+
+def peek():
+    global SIZE,queue,front,rear
+    if (isQueueEmpty()):
+        print('큐 텅비었음')
+        return
+    return queue[front+1]
     
     
 
@@ -43,14 +49,10 @@ front = rear = -1
 ##메인
 enQueue('화사')
 enQueue('솔라')
-#enQueue('문별')
-#enQueue('휘인')
-#enQueue('선미')
-print('출구<---',queue,'<---입구')
-
-#nQueue('재남')
-#print('출구<---',queue,'<---입구')
-
+enQueue('문별')
+enQueue('휘인')
+enQueue('선미')
+print('출구<--', queue, '<--입구')
 
 retData = deQueue()
 print('손님 이리로 :', retData)
@@ -60,5 +62,4 @@ print('손님 이리로 :', retData)
 
 print('출구<--', queue, '<--입구')
 
-retData = deQueue()
-print('손님 이리로 :', retData)
+enQueue('재남')
